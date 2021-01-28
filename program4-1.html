@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Program 4-1</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 3: Template Only</h1>
+      <h2>Jared Newitt</h2>
+    </header>
+    <main>
+      <h3>Build City State Address</h3>
+      <label>Please enter a city name: <input type="text" id="city" /></label>
+      <label
+        >Please enter the state or country name: <input type="text" id="state"
+      /></label>
+      <label><button onclick="buildAddress()">Build the Address</button></label>
+      <hr />
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+      function buildAddress() {
+        // INPUT - get the city name and state or country name from user (2 inputs)
+        // city, state
+        const city = document.querySelector('#city').value;
+        const state = document.querySelector('#state').value;
+        // PROCESSING - the objective is to combine the two inputs into this format city, state
+       let output = city + ',' + state;
+        // OUTPUT - city, state
+        document.getElementById('output').innerHTML = output;
+      }
+    </script>
+  </body>
+</html>

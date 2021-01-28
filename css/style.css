@@ -38,6 +38,9 @@ h3 {
 	padding: 0;
 }
 
+input, button {
+	padding: .5rem;
+}
 label {
 	display: block;
 	margin: 5px;
