@@ -7,16 +7,14 @@
   </head>
   <body>
     <header>
-      <h1>Week 3: Template Only</h1>
+      <h1>Week 4: Add Two Numbers</h1>
       <h2>Jared Newitt</h2>
     </header>
     <main>
-      <h3>Build City State Address</h3>
-      <label>Please enter a city name: <input type="text" id="city" /></label>
-      <label
-        >Please enter the state or country name: <input type="text" id="state"
-      /></label>
-      <label><button onclick="buildAddress()">Build the Address</button></label>
+      <h3>Add Two Numbers</h3>
+      <label>Enter Number One: <input type="text" id="number1" /></label>
+      <label>Enter Number Two: <input type="text" id="number2" /></label>
+      <label><button onclick="addNumbers()">Add Numbers</button></label>
       <hr />
       <p><span id="output"></span></p>
     </main>
@@ -24,15 +22,15 @@
       &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
     </footer>
     <script>
-      function buildAddress() {
-        // INPUT - get the city name and state or country name from user (2 inputs)
-        // city, state
-        const city = document.querySelector('#city').value;
-        const state = document.querySelector('#state').value;
-        // PROCESSING - the objective is to combine the two inputs into this format city, state
-       let output = city + ',' + state;
-        // OUTPUT - city, state
-        document.getElementById('output').innerHTML = output;
+      function addNumbers() {
+        //Input
+        let x = parseFloat(document.getElementById("number1").value);
+        let y = parseFloat(document.getElementById("number2").value);
+        // Processing
+        let sum = x + y;
+        // Output
+        document.getElementById("output").innerHTML =
+          "The sum of " + x + " and " + y + " equals " + sum + "!";
       }
     </script>
   </body>
