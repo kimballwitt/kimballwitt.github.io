@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volume of a Cylinder</title>
+  </head>
+  <body>
+    <header>
+      <h1>Volume of a Cylinder</h1>
+    </header>
+    <main>
+      <label>Enter radius of cylinder <input type="text" id="radius"/></label>
+      <label><button type="button" onclick="afterTax()">Compute After Tax Pay</button></label>
+      <hr>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+   <script>
+       /* Input: Enter total regular hours. Enter total overtime hours.
+* Processing: Multiply regular hours by $15 an hour. Multiply overtime hours by $22.5O an hour
+x = regular hours worked y = overtime hours worked (15 * x) + (22.50 * y) - the tax amount 15%.
+* Output: Employees after tax pay.
+*/
+function afterTax() {
+// INPUT
+let regHours = parseFloat(document.getElementById('regHours').value);
+let overtimeHours = parseFloat(document.getElementById('overTimeHours').value);
+
+// Process
+let regHours = pounds * 0.453592;
+
+// Employee after tax pay.
+let digits =1;
+let multiplier = Math.pow(10, digits);
+kilograms = Math.round(kilograms * multiplier)/multiplier;
+
+// Display the kilograms to the user.
+document.getElementById('output').innerHTML = kilograms.toFixed(1) + ' Kilograms';
+}
+  </script>
+  </body>
+</html>

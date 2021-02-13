@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <header>
+    <h1>Week 6: Simple Calculator</h1>
+    <h2>Jared Newitt</h2>
+  </header>
+  <body>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <main>
+      <h3>Simple Calculator</h3>
+      <label><input type="text" id="number1" placeholder="First Number"
+      /></label>
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option></select
+      ><label
+        ><input type="text" id="number2" placeholder="Second Number"
+      /></label>
+      <label>=</label>
+      <label><input type="text" id="answer" placeholder="Answer" /></label>
+      <br />
+      <label><button onclick="calculator()">Check</button></label>
+      <hr />
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script src="js/calc.js"></script>
+  </body>
+</html>
