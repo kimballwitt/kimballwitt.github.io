@@ -11,16 +11,21 @@
       <link href="css/style.css" rel="stylesheet" />
     </head>
     <main>
-      <h3>Weather Shoes</h3>
-      <label>Enter Number One: <input type="text" id="number1" /></label>
-      <label>Enter Number Two: <input type="text" id="number2" /></label>
-      <label><button onclick="addNumbers()">Add Numbers</button></label>
-      <hr />
+      <label>What is the weather like?</label>
+<select id='weather'>
+<option value="">--Choose your option--</option>
+<option value='hot'>Hot</option>
+<option value='rain'>Rain</option>
+<option value='snow'>Snow</option>
+<option value='unknown'>Unknown</option>
+</select>
+      <label><button onclick="footwear()">Footwear</button></label>
+      <hr>
       <p><span id="output"></span></p>
     </main>
     <footer>
       &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
     </footer>
-    <script src="js/scripts.js"></script>
+    <script src="js/foot.js"></script>
   </body>
 </html>
