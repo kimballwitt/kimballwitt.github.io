@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Alarm</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 7: Alarm</h1>
+      <h2>Jared Newitt</h2>
+    </header>
+    <main>
+      <label><button type= "button" onclick="alarm()">What am I doing today?</button></label>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+      /*Input: Get day of the week
+      *Processing: Use if statements to determine whether to get up or sleep in
+      *Output: Let user know if they should get up or sleep in
+      */
+      function alarm(){
+        var now = new Date();
+        var month = now.getMonth();
+        var dayOfMonth = now.getDate();
+        var dayOfWeek = now.getDay(); 
+
+        if (dayOfWeek == 6 || dayOfWeek == 0 || month == 0 && dayOfMonth == 1 || month == 6 && dayOfMonth == 4 || month == 11 && dayOfMonth == 25) {
+            alarm = "Sleep in.";
+          }
+            else {
+            alarm = "Get Up!";
+        }
+        document.getElementById('output').innerHTML = "You Need to " + alarm;
+      }
+    </script>
+  </body> 
+</html>
