@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sales Conditional Discount</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 7: Sales Conditional Discount</h1>
+      <h2>Jared Newitt</h2>
+    </header>
+    <main>
+      <label>Enter Subtotal: <input type="text" id="purchase"/></label>
+      <label><button type= "button" onclick="total()">Total</button></label>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+      /*Input: Customer's subtotal amount and the day of week
+      *Processing: Calculate customer discount if purchased on Tuesday or Wednesday if the subtotal is greater than $50.
+      *Output: The total amount due by adding sales tax of 6% to the subtotal.
+      */
+      function getDiscountedAmount(purchase) {
+  var dayOfWeek = new Date().getDay();
+let rate = .10;
+    if (purchase >= 50 && dayOfWeek == 2 || dayOfWeek == 3) {
+        rate = .10;
+    }
+    else (purchase * .06); {
+    }
+        document.getElementById('output').innerHTML = total;
+      }
+    </script>
+  </body> 
+</html>
+
+
+var x = purchase
+var discount = .10
+var saletax = .06
+
+if (x >= 50 && dayOfWeek == 2 || dayOfWeek ==3) {
+   (x * discount) + x = subtotal 
+}
+    
+
+<!Doctype html>
+<html>
+<body>
+    <input id="price">Price
+    <br><br>
+    <input id="discount">%
+    <br><br>
+    <input id="salesTax">%
+    <br><br>
+    <button onclick="getPrice()">
+Get total
+</button>
+    <br><br>
+    <input readonly id="total">
+    <script>
+        getPrice = function() {
+            var price = Number(document.getElementById("price").value);
+            var discount = Number(document.getElementById("discount").value) / 100;
+            var salesTax = Number(document.getElementById("salesTax").value) * .06;
+            var totalValue = price - (price * discount)
+            document.getElementById("total").value = totalValue.toFixed(2);
+        }
+    </script>
+</body>
+</html>

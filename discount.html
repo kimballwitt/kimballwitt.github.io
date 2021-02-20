@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discount</title>
+    <meta charset="utf-8" />
+    <title>Sales Conditional Discount</title>
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <h1>Week 7: Discount</h1>
+      <h1>Week 7: Sales Conditional Discount</h1>
       <h2>Jared Newitt</h2>
     </header>
     <main>
-      <label>Enter pounds: <input type="text" id="pounds"/></label>
-      <label><button type="button" onclick="poundsTokilograms()">Convert to kilograms</button></label>
-      <hr>
+      <label>Enter Subtotal: <input type="text" id="subtotal"/></label>
+      <label><button type= "button" onclick="total()">Get Total</button></label>
       <p><span id="output"></span></p>
     </main>
     <footer>
       &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
     </footer>
     <script>
-        var now = new Date();
-        var month = now.getMonth();
-        var dayOfMonth = now.getDate();
-        var dayOfWeek = now.getDay(); 
-        if (dayOfWeek == 6 || dayOfWeek == 0 || ) {
-            message = "Sleep in.";
+      /*Input: Customer's subtotal amount and the day of week
+      *Processing: Calculate customer discount if purchased on Tuesday or Wednesday if the subtotal is greater than $50.
+      *Output: The total amount due by adding sales tax of 6% to the subtotal.
+      */
+      function subtotal(){
+        var dayOfWeek = new Date().getDay(); 
+        let discount = purchase * .10;
+        let salestax = .06;
+        let total = subtotal + salestax;
+        if (subtotal > 50 && dayOfWeek == 2 || dayOfWeek == 3) {
+          total = subtotal - ( subtotal * discount) + salestax;
         }
+        document.getElementById('output').innerHTML = total;
+      }
     </script>
-    
-</body>
+  </body> 
 </html>
-
-
-    //get up or sleep in
-    // if January 1 (New Year’s Day), July 4 (U.S. Independence Day), and December 25 (Christmas)
-
-    //OUTPUT On Holiday's "Sleep In." On all weekdays "Get Up!"
