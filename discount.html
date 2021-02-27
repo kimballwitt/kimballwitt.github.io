@@ -12,7 +12,7 @@
     </header>
     <main>
       <label>Enter Subtotal: <input type="text" id="subtotal"/></label>
-      <label><button type= "button" onclick="total()">Get Total</button></label>
+      <label><button type= "button" onclick="subtotal()">Get Total</button></label>
       <p><span id="output"></span></p>
     </main>
     <footer>
@@ -24,15 +24,19 @@
       *Output: The total amount due by adding sales tax of 6% to the subtotal.
       */
       function subtotal(){
-        var dayOfWeek = new Date().getDay(); 
+        let dayOfWeek = new Date().getDay(); 
         let discount = purchase * .10;
         let salestax = .06;
         let total = subtotal + salestax;
-        if (subtotal > 50 && dayOfWeek == 2 || dayOfWeek == 3) {
-          total = subtotal - ( subtotal * discount) + salestax;
+        if (subtotal > 50 && (dayOfWeek == 2 || dayOfWeek == 3)) {
+          subtotal = purchase - salestax;
         }
         document.getElementById('output').innerHTML = total;
       }
     </script>
   </body> 
 </html>
+
+//total = subtotal - ( subtotal * discount) + salestax;
+
+// && gets multiplied before || (Or) does Do days of the week first and subtotal at the end.

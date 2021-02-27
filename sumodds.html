@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sum up the Odd Values</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 8: Sum up the Odd Values</h1>
+      <h2>Jared Newitt</h2>
+    </header>
+    <main>
+      <label>Enter an interger: <input type="text" id="intNumber"/></label>
+      <label><button onclick="Calculate()">Calculate</button></label>
+    <hr />
+      <p id="output"></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+      function Calculate() {
+        // INPUT: Enter an interger
+        let intNumber = parseInt(document.getElementById('intNumber').value);
+        let sum = 0;
+        // PROCESS: Add all the odd intergers between 1 and n
+    for (let n = 0;  n <= intNumber; n++) {
+        if (n%2 !== 0) {
+        // OUTPUT: The sum of all the odd intergers
+        output = output + n + '<br>';
+        sum = sum + n;
+    }
+}
+    document.getElementById('output').innerHTML = 'Answer = ' + sum;
+}
+    </script>
+  </body> 
+</html>
