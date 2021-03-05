@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Times Table using Repetition</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 9: Times Table using Repetition</h1>
+      <h2>Jared Newitt</h2>
+    </header>
+    <main>
+      <p id="fiveTimes"></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+    
+    var text = '';
+    var i;
+    var j;
+    for (i = 5; i <= 12; i++) {
+    for (var j = 1; j <= 12; j++) {
+    text += '5' + ' x ' + (j) + ' = ' + (i*j) + '<br>';
+    }
+    if (i === 5) {
+        break;
+    }
+    text += ''
+}
+    document.getElementById("fiveTimes").innerHTML = text;
+    </script>
+  </body>
+</html>

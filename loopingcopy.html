@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sum up the Odd Values</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 9: Repetition</h1>
+      <h2>Jared Newitt</h2>
+    </header>
+    <main>
+      <label>Enter an upper limit interger: <input type="text" id="upper"/></label>
+      <label><button onclick="exampleLoops()">Loop Examples</button></label>
+    <hr />
+      <p id="output"></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+      function exampleLoops() {
+        // Get upper control value from
+        let upper = parseInt(document.getElementById('upper').value);
+        let sum = 0;
+        // for loop starting i value to the upper limit given by the user
+        output = '';
+
+        for (let i = 0; i <= upper; i+=2) {
+            output += 'Value: ' + i + '<br>';
+            i++;
+        }
+    document.getElementById('output').innerHTML = output + '<p>Done!</p>';
+}
+    </script>
+  </body> 
+</html>
