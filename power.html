@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Times Table using Repetition</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 9 Exam: Question 1</h1>
+      <h2>Jared Newitt</h2>
+    </header>
+    <main>
+      <p id="twoPower"></p>
+    </main>
+    <footer>
+      &copy;2021 &bull; Jared Newitt &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+    /* Input: None the code will just run
+     * Processing: 2 power of 0 to 2 power of 31. 
+     * Output: powers of 2 will output with comma's after each calculation 1, 2, 4, 8...
+     */
+    var text = '';
+    var i;
+    var j;
+    for (i = 0; i <= 31; i++) {
+    for (var j = 1; j <= 31; j++) {
+    text += '' + (j) + ', ';
+    }
+    if (i === 0) {
+        break;
+    }
+    text += ''
+}
+    document.getElementById("twoPower").innerHTML = text;
+    </script>
+  </body>
+</html>
