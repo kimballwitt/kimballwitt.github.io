@@ -5,12 +5,13 @@
 <title>Loan</title>
 </head>
 <body>
-    <label for ="principal">Amount Borrowed <input type="text" name="principal" id="principal" required></label><br>
+    <label for ="ammountBorrowed">Amount Borrowed <input type="text" name="ammountBorrowed" id="ammountBorrowed" required></label><br>
     <label for ="annualRate">Annual Interest Rate <input type="text" name="annualRate" id="annualRate" required></label><br>
     <label for ="years">Number of Years <input type="text" name="years" id="years" required></label><br>
-    <label for ="periodsPerYear">Payments Per Year <input type="periodsPerYear" name="periodsPerYear" id="years" required></label><br>
+    <label for ="paymentsPerYear">Payments Per Year <input type="text" name="paymentsPerYear" id="paymentsPerYear" required></label><br>
     <button type="button" onclick="doPayment()">Compute Payment</button><br>
-    <label for ="numberOfPaymentPaidToDate">Number of Payments Paid to Date <input type="numberOfPaymentPaidToDate" name="numberOfPaymentPaidToDate" id="numberOfPaymentPaidToDate" required></label><br>
+    <div id="outputDiv"></div>
+    <label for ="numberOfPaymentPaidToDate">Number of Payments Paid to Date <input type="text" name="numberOfPaymentPaidToDate" id="numberOfPaymentPaidToDate" required></label><br>
     <button type="button" onclick="doBalance()">Compute Payoff Amount</button>
     <div id="outputDiv"></div> 
 </body> 
@@ -19,24 +20,37 @@
     /* Input: 
      */
     function doPayment() {
-        let side1 = parseFloat(document.getElementById('one').value);
-        let r = triangleArea(side1, side2, side3);
+        let ammountBorrowed = parseFloat(document.getElementById('ammountBorrowed').value);
+        let annualRate = parseFloat(document.getElementById('annualRate').value);
+        let years = parseFloat(document.getElementById('years').value);
+        let paymentsPerYear = parseFloat(document.getElementById('paymentsPerYear').value);
+        let r = computePayment (ammountBorrowed, annualRate, years, paymentsPerYear);
         document.getElementById('outputDiv').innerHTML = r;
     }
     function doBalance() {
-        let side1 = parseFloat(document.getElementById('one').value);
-        let r = triangleArea(side1, side2, side3);
-        document.getElementById('outputDiv').innerHTML = r;
+        let ammountBorrowed = parseFloat(document.getElementById('ammountBorrowed').value);
+        let annualRate = parseFloat(document.getElementById('annualRate').value);
+        let years = parseFloat(document.getElementById('years').value);
+        let paymentsPerYear = parseFloat(document.getElementById('paymentsPerYear').value);
+        let numberOfPaymentPaidToDate = parseFloat(document.getElementById('numberOfPaymentPaidToDate').value);
+        let s = computePayment (ammountBorrowed, annualRate, years, paymentsPerYear, numberOfPaymentPaidToDate);
+        document.getElementById('outputDiv').innerHTML = s;
     }
-    function computePayment(principal, annualRate, years, periodsPerYear) {
-        let side1 = parseFloat(document.getElementById('one').value);
-        let r = triangleArea(side1, side2, side3);
-        document.getElementById('outputDiv').innerHTML = r;
+    function computePayment (ammountBorrowed, annualRate, years, periodsPerYear) {
+        let a = ammountBorrowed;
+        let r = annualRate / 12;
+        let n = years * periodsPerYear;
+        let p = a * r / (1 - (1 + r) ** -n);
+        return p;
     }
-    function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
-        let side1 = parseFloat(document.getElementById('one').value);
-        let r = triangleArea(side1, side2, side3);
-        document.getElementById('outputDiv').innerHTML = r;
+    function computeBalance (ammountBorrowed, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
+        let a = ammountBorrowed;
+        let r = annualRate / 12;
+        let n = years * numberOfPaymentPaidToDate;
+        let d = numberOfPaymentPaidToDate;
+        let b = a * (1 + r) ** d - p ((1 + r) ** d - 1) / r;
+        return b;
+        document.getElementById('outputDiv').innerHTML = b;
     }
     </script>                                 
 </html>
