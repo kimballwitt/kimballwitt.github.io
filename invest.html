@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Future Investment</title>
+</head>
+<body>
+    <label for ="principal">Amount Invested: <input type="text" name="principal" id="one" required></label><br>
+    <label for ="annualRate">Annual Rate: <input type="text" name="annualRate" id="two" required></label><br>
+    <label for ="years">Number of Years: <input type="text" name="years" id="three" required></label><br>
+    <label for ="periodsPerYear">Periods Per Year: <input type="text" name="periodsPerYear" id="four" required></label><br>
+    <button type="button" onclick="doFV()">Compute Future Value</button>
+    <div id="outputDiv"></div> 
+</body> 
+  
+<script>
+    /* Input: Principal, Annual interest Rate, number of years and periods per year
+     * Processing: Compute future value of investment
+     * Output: Future Value of investment 
+     */
+    function doFV() {
+        let principal = parseFloat(document.getElementById('one').value);
+        let annualRate = parseFloat(document.getElementById('two').value);
+        let years = parseFloat(document.getElementById('three').value);
+        let periodsPerYear = parseFloat(document.getElementById('four').value);
+        let r = computeFutureValue(principal, annualRate, years, periodsPerYear);
+        document.getElementById('outputDiv').innerHTML = r;
+    }
+    function computeFutureValue(principal, annualRate, years, periodsPerYear) { 
+        let a = principal;
+        let r = 0.07 / 12;
+        let n = years * 12;
+        let f = a * (1 + r) ** n;
+        return f;
+    }
+    </script>                                 
+</html>

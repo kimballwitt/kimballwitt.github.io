@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Loan</title>
+</head>
+<body>
+    <label for ="principal">Amount Borrowed <input type="text" name="principal" id="principal" required></label><br>
+    <label for ="annualRate">Annual Interest Rate <input type="text" name="annualRate" id="annualRate" required></label><br>
+    <label for ="years">Number of Years <input type="text" name="years" id="years" required></label><br>
+    <label for ="periodsPerYear">Payments Per Year <input type="periodsPerYear" name="periodsPerYear" id="years" required></label><br>
+    <button type="button" onclick="doPayment()">Compute Payment</button><br>
+    <label for ="numberOfPaymentPaidToDate">Number of Payments Paid to Date <input type="numberOfPaymentPaidToDate" name="numberOfPaymentPaidToDate" id="numberOfPaymentPaidToDate" required></label><br>
+    <button type="button" onclick="doBalance()">Compute Payoff Amount</button>
+    <div id="outputDiv"></div> 
+</body> 
+  
+<script>
+    /* Input: 
+     */
+    function doPayment() {
+        let side1 = parseFloat(document.getElementById('one').value);
+        let r = triangleArea(side1, side2, side3);
+        document.getElementById('outputDiv').innerHTML = r;
+    }
+    function doBalance() {
+        let side1 = parseFloat(document.getElementById('one').value);
+        let r = triangleArea(side1, side2, side3);
+        document.getElementById('outputDiv').innerHTML = r;
+    }
+    function computePayment(principal, annualRate, years, periodsPerYear) {
+        let side1 = parseFloat(document.getElementById('one').value);
+        let r = triangleArea(side1, side2, side3);
+        document.getElementById('outputDiv').innerHTML = r;
+    }
+    function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
+        let side1 = parseFloat(document.getElementById('one').value);
+        let r = triangleArea(side1, side2, side3);
+        document.getElementById('outputDiv').innerHTML = r;
+    }
+    </script>                                 
+</html>
