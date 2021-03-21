@@ -12,8 +12,8 @@
     <button type="button" onclick="doPayment()">Compute Payment</button><br>
     <div id="outputDiv"></div>
     <label for ="numberOfPaymentPaidToDate">Number of Payments Paid to Date: <input type="text" name="numberOfPaymentPaidToDate" id="numberOfPaymentPaidToDate" required></label><br>
-    <button type="button" onclick="doBalance()">Compute Payoff Amount</button>
-    <div id="outputDiv"></div> 
+    <button type="button" onclick="doBalance()">Compute Payoff Amount</button><br>
+    <div id="outputDiv2"></div> 
 </body> 
   
 <script>
@@ -33,8 +33,8 @@
         let years = parseFloat(document.getElementById('years').value);
         let paymentsPerYear = parseFloat(document.getElementById('paymentsPerYear').value);
         let numberOfPaymentPaidToDate = parseFloat(document.getElementById('numberOfPaymentPaidToDate').value);
-        let s = computePayment (ammountBorrowed, annualRate, years, paymentsPerYear, numberOfPaymentPaidToDate);
-        document.getElementById('outputDiv').innerHTML = s;
+        let s = computeBalance (ammountBorrowed, annualRate, years, paymentsPerYear, numberOfPaymentPaidToDate);
+        document.getElementById('outputDiv2').innerHTML = s;
     }
     function computePayment (ammountBorrowed, annualRate, years, periodsPerYear) {
         let a = ammountBorrowed;
@@ -48,9 +48,9 @@
         let r = annualRate / 12;
         let n = years * numberOfPaymentPaidToDate;
         let d = numberOfPaymentPaidToDate;
-        let b = a * (1 + r) ** d - p ((1 + r) ** d - 1) / r;
+        let p = computePayment (ammountBorrowed, annualRate, years, periodsPerYear); 
+        let b = a * (1 + r) ** d - p.toFixed(2) * ((1 + r) ** d - 1) / r;
         return b;
-        document.getElementById('outputDiv').innerHTML = b;
     }
     </script>                                 
 </html>
