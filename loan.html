@@ -40,7 +40,8 @@
         let a = ammountBorrowed;
         let r = annualRate / 12;
         let n = years * periodsPerYear;
-        let p = a * r / (1 - (1 + r) ** -n);
+        let num = a * r / (1 - (1 + r) ** -n);
+        let p = num.toFixed(2);
         return p;
     }
     function computeBalance (ammountBorrowed, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
@@ -49,7 +50,8 @@
         let n = years * numberOfPaymentPaidToDate;
         let d = numberOfPaymentPaidToDate;
         let p = computePayment (ammountBorrowed, annualRate, years, periodsPerYear); 
-        let b = a * (1 + r) ** d - p.toFixed(2) * ((1 + r) ** d - 1) / r;
+        let num = a * (1 + r) ** d - p * ((1 + r) ** d - 1) / r;
+        let b = num.toFixed(2);
         return b;
     }
     </script>                                 
